@@ -1,0 +1,56 @@
+<html>
+<head>
+
+<title>Jan. 2: The Battle for Tahrir Square</title>
+<script src="http://trunk.simile-widgets.org/exhibit/api/exhibit-api.js"></script>
+<script src="http://trunk.simile-widgets.org/exhibit/api/extensions/time/time-extension.js"></script>
+<script src="http://trunk.simile-widgets.org/exhibit/api/extensions/map/map-extension.js"></script>
+
+<!-- <link href="sample.tsv" rel="exhibit/data" type="text/tsv"/> -->
+<!-- <link href="schema.js" rel="exhibit/data" type="application/json"/> -->
+<link href="https://spreadsheets.google.com/feeds/list/0AhAtARHyRN5adGZKTWstczJvNjEyU1JEUGdsd1UwZ0E/od6/public/basic?alt=json-in-script" rel="exhibit/data" ex:converter="googleSpreadsheets" type="application/jsonp"/>
+<link rel="exhibit/data" ex:converter="googleSpreadsheets" type="application/jsonp" href="https://spreadsheets.google.com/feeds/list/0AhAtARHyRN5adFBTczRpMktmS3BPU0lpRVBWenhCV3c/od6/public/basic?hl=en_US&alt=json-in-script"/>
+<link href="styles.css" type="text/css" rel="stylesheet" />
+
+</head>
+<body>
+<h1>Feb. 2: The Battle for Tahrir Square</h1>
+<!-- <h2></h2> -->
+
+<div ex:role="collection" ex:itemTypes="Item"></div>
+
+<div ex:role="lens">
+	<div ex:content=".label"></div>
+</div>
+	
+<div id="options-wrapper">
+	<div id="options">
+		<div class="mode" ex:role="facet" ex:expression=".location" ex:showMissing="false" ex:height="150px"></div>
+		<div class="mode" ex:role="facet" ex:expression=".gender" ex:showMissing="false" ex:height="150px"></div>
+		<div class="mode" ex:role="facet" ex:expression=".role" ex:showMissing="false" ex:height="150px"></div>
+		<div class="mode" ex:role="facet" ex:expression=".username" ex:showMissing="false" ex:height="150px"></div>
+		<div ex:role="facet" ex:facetLabel="action" ex:expression=".action" ex:showMissing="false" ex:height="150px"></div>
+		<div ex:role="facet" ex:expression=".emotion" ex:showMissing="false"></div>	
+	</div>
+</div>
+
+<div id="secondRow">
+	<div id="cloud">
+		<p class="topics">Topics:</p>
+		<div ex:role="facet" ex:expression=".keywords" ex:facetClass="Cloud" ex:showMissing="false"></div>
+	</div>
+	<div id="maps">
+		<div ex:role="viewPanel">
+			<div ex:role="view" ex:viewClass="Timeline" ex:start=".time" ex:colorKey=".username"></div>
+			<div ex:role="view" ex:viewClass="Map" ex:latlng=".location.latlng" ex:zoom="16" ex:center="30.044939,31.23680" ex:topBandPixelsPerUnit="25px"></div>
+			<div ex:role="lens">
+				<a class="hoverOver" ex:href-content=".url"><div ex:content=".label"></div></a>
+				<b>Topics:</b> <span ex:content=".keywords"></span>
+				<br/><br/>
+			</div>
+			<div ex:role="view" ex:label="List"></div>
+		</div>
+	</div>
+</div>
+</body>
+
